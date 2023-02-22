@@ -91,7 +91,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/products" element={<Products />} />
-        {/* <Route path="/crops" element={<Crops />} /> */}
+        <Route path="/crops" element={<Crops />} />
         <Route path="/products/:keyword" element={<Products />} />
 
         <Route path="/cart" element={<Cart />} />

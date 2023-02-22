@@ -6,10 +6,18 @@ import {
   ALL_CROPS_REQUEST,
   ALL_CROPS_SUCCESS,
   CLEAR_ERRORS,
+  DELETE_CROP_FAIL,
+  DELETE_CROP_REQUEST,
+  DELETE_CROP_RESET,
+  DELETE_CROP_SUCCESS,
   NEW_CROP_FAIL,
   NEW_CROP_REQUEST,
   NEW_CROP_RESET,
   NEW_CROP_SUCCESS,
+  UPDATE_CROP_FAIL,
+  UPDATE_CROP_REQUEST,
+  UPDATE_CROP_RESET,
+  UPDATE_CROP_SUCCESS,
 } from "../constants/productConstants";
 
 export const cropsReducer = (state = { crops: [] }, { type, payload }) => {
@@ -23,7 +31,7 @@ export const cropsReducer = (state = { crops: [] }, { type, payload }) => {
     case ALL_CROPS_SUCCESS:
       return {
         loading: false,
-        crops: payload.products,
+        crops: payload.crops,
       };
     case ADMIN_CROPS_SUCCESS:
       return {
@@ -35,6 +43,54 @@ export const cropsReducer = (state = { crops: [] }, { type, payload }) => {
       return {
         loading: false,
         error: payload,
+      };
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null,
+      };
+    default:
+      return state;
+  }
+};
+
+// New Product Reducer
+export const cropReducer = (state = {}, { type, payload }) => {
+  switch (type) {
+    case UPDATE_CROP_REQUEST:
+    case DELETE_CROP_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case UPDATE_CROP_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        isUpdated: payload,
+      };
+    case DELETE_CROP_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        isDeleted: payload,
+      };
+    case UPDATE_CROP_FAIL:
+    case DELETE_CROP_FAIL:
+      return {
+        ...state,
+        loading: false,
+        error: payload,
+      };
+    case UPDATE_CROP_RESET:
+      return {
+        ...state,
+        isUpdated: false,
+      };
+    case DELETE_CROP_RESET:
+      return {
+        ...state,
+        isDeleted: false,
       };
     case CLEAR_ERRORS:
       return {

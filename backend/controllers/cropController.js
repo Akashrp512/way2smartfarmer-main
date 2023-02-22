@@ -1,6 +1,6 @@
 const Crop = require("../models/cropModel");
 const asyncErrorHandler = require("../middlewares/asyncErrorHandler");
-
+const SearchFeatures = require("../utils/searchFeatures");
 const cloudinary = require("cloudinary");
 
 // Get All Crops

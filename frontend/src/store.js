@@ -28,7 +28,11 @@ import {
   paymentStatusReducer,
 } from "./reducers/orderReducer";
 import { wishlistReducer } from "./reducers/wishlistReducer";
-import { cropsReducer, newCropReducer } from "./reducers/cropReducer";
+import {
+  cropReducer,
+  cropsReducer,
+  newCropReducer,
+} from "./reducers/cropReducer";
 
 const reducer = combineReducers({
   user: userReducer,

@@ -36,10 +36,6 @@ import {
   SLIDER_PRODUCTS_FAIL,
   SLIDER_PRODUCTS_REQUEST,
   SLIDER_PRODUCTS_SUCCESS,
-  NEW_CROP_REQUEST,
-  NEW_CROP_SUCCESS,
-  NEW_CROP_FAIL,
-  NEW_CROP_RESET,
 } from "../constants/productConstants";
 
 export const productsReducer = (
@@ -161,27 +157,23 @@ export const newProductReducer = (
 ) => {
   switch (type) {
     case NEW_PRODUCT_REQUEST:
-   
       return {
         ...state,
         loading: true,
       };
     case NEW_PRODUCT_SUCCESS:
-  
       return {
         loading: false,
         success: payload.success,
         product: payload.product,
       };
     case NEW_PRODUCT_FAIL:
- 
       return {
         ...state,
         loading: false,
         error: payload,
       };
     case NEW_PRODUCT_RESET:
-
       return {
         ...state,
         success: false,
