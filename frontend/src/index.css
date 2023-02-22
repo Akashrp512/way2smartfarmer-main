@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* /////////////////////////////////////////////////////////////////////////// */
+.dark-mode {
+  background-color: black;
+  /* color: #ffffff; */
+}
+
+.share-container {
+  display: flex;
+  justify-content: right;
+  position: relative;
+}
+
+.share-button {
+  background-color: #4267b2;
+  color: #fff;
+  border: 0;
+  border-radius: 50px;
+  padding: 0.75em 1.5em;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  padding: 4px 8px;
+}
+
+.share-button:hover {
+  background-color: #295d8a;
+}
+
+.share-icons {
+  display: grid;
+  grid-template-columns: auto;
+  position: absolute;
+  top: 115px;
+  right: 0px;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 5;
+  visibility: hidden;
+  background-color: #215d0e;
+  border-radius: 10px;
+  color: #ffc100;
+  padding: 10px 5px;
+  box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+  transition: all 0.3s ease-in-out;
+}
+
+.share-container:hover .share-icons {
+  opacity: 1;
+  visibility: visible;
+}
+
+.share-icons button {
+  background-color: transparent;
+  border: 0;
+  margin: 0 0.5em;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.share-icons button:hover {
+  transform: scale(1.2);
+}
+
+.share-icons i {
+  font-size: 1.5em;
+}
+.share-button {
+  gap: 10px;
+  display: inline-flex;
+  margin: 10px;
+}
+.share-button i {
+  padding-top: 5px;
+}
+
+.dropdown {
+  display: grid;
+  justify-items: center;
+}
+.dropdown button {
+  padding: 2px 10px;
+}
+.dropdown img {
+  width: 50px;
+}
+.container {
+  text-align: center;
+  display: flex;
+  margin-top: 60px;
+  justify-content: center;
+  gap: 100px;
+}
+.navbar-brand img {
+  width: 50px;
+}
+.subdrop {
+  position: absolute;
+  left: 65%;
+}
+.dropdown button {
+  width: 100%;
+}
+.dropdown-toggle {
+  background-color: #343a40;
+  border: none;
+  text-align: left;
+}
+/* /////////////////////////////////////////////////////////////////////// */
+body {
+  background-color: #f1f3f6;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* hover navbar dropdown arrow */
+.arrow_down {
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+  border-bottom: 11px solid #fff;
+}
+/* hover navbar dropdown arrow */
+
+/* login signup sidebar bg image */
+.loginSidebar {
+  background-image: url('https://www.way2foods.in/images/way2foods%20logo.png');
+  background-position: center 95%;
+  width: 250px;
+  background-repeat: no-repeat;
+  padding: 50px;
+}
+/* login signup sidebar bg image */
+/* ////////////////////////////////////////////////////////////// */
+.searchbar {
+  border-radius: 10px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  width: 50%;
+}
+.main-logo {
+  height: 35px;
+  border-radius: 50%;
+  border: thick double #32a1ce;
+}
+.login {
+  padding: 5px 10px;
+  background: #ffc100;
+  border-radius: 5px;
+  color: #215d0e;
+  height: 30px;
+}
+.nav_hedder {
+  background-color: #215d0e;
+}
+.nav_hedder a {
+  margin-bottom: 4px;
+}
+.banner-p {
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  height: 20rem;
+}
+.slick-track {
+  gap: 10px;
+}
+.p-6 {
+  background: lightgreen;
+  margin: 2px 10px;
+  border-radius: 10px;
+  border: thick double #00026b;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+.view-all {
+  border-radius: 10px;
+}
+
+/* /////////////////////////////////////////////// */
+@media screen and (max-width: 450px) {
+  .searchbar {
+    width: 85%;
+    height: 30px;
+  }
+  .searchbar input {
+    font-size: 11px;
+  }
+}
