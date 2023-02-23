@@ -165,7 +165,7 @@ const Products = () => {
 
                                 </div>
                                 {/* ratings filter */}
-
+                    
                             </div>
 
                         </div>

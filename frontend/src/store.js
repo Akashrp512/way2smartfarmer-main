@@ -29,6 +29,7 @@ import {
 } from "./reducers/orderReducer";
 import { wishlistReducer } from "./reducers/wishlistReducer";
 import {
+  cropDetailsReducer,
   cropReducer,
   cropsReducer,
   newCropReducer,
@@ -41,6 +42,7 @@ const reducer = combineReducers({
   products: productsReducer,
   crops: cropsReducer,
   productDetails: productDetailsReducer,
+  cropDetails: cropDetailsReducer,
   newReview: newReviewReducer,
   cart: cartReducer,
   saveForLater: saveForLaterReducer,
@@ -53,7 +55,7 @@ const reducer = combineReducers({
   newProduct: newProductReducer,
   newCrop: newCropReducer,
   product: productReducer,
-  crop: cropsReducer,
+  crop: cropReducer,
   users: allUsersReducer,
   userDetails: userDetailsReducer,
   reviews: productReviewsReducer,

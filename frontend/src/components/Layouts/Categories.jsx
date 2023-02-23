@@ -10,10 +10,7 @@ const catNav = [
     name: 'AgriClinic',
     icon: mobiles,
   },
-  {
-    name: 'MarketMitra',
-    icon: mobiles,
-  },
+
   {
     name: 'Knowledge Centre',
     icon:mobiles,
@@ -63,6 +60,23 @@ const Categories = () => {
             </span>
           </Link>
         ))}
+        <Link 
+        to={`/market_mitra`}
+        className="flex flex-col gap-1 items-center p-2 group"
+      
+        >
+          <div className="h-16 w-16">
+              <img
+                draggable="false"
+                className="h-full w-full object-contain"
+                src={mobiles}
+                alt='market_mitra'
+              />
+            </div>
+            <span className="text-sm text-gray-800 font-medium group-hover:text-primary-blue">
+             Market Mitra
+            </span>
+        </Link>
       </div>
     </section>
   );

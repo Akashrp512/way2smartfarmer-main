@@ -31,9 +31,9 @@ import {
   SLIDER_PRODUCTS_REQUEST,
   SLIDER_PRODUCTS_SUCCESS,
   SLIDER_PRODUCTS_FAIL,
-  NEW_CROP_REQUEST,
-  NEW_CROP_SUCCESS,
-  NEW_CROP_FAIL,
+  // NEW_CROP_REQUEST,
+  // NEW_CROP_SUCCESS,
+  // NEW_CROP_FAIL,
 } from "../constants/productConstants";
 
 // Get All Products --- Filter/Search/Sort

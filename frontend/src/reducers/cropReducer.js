@@ -18,6 +18,10 @@ import {
   UPDATE_CROP_REQUEST,
   UPDATE_CROP_RESET,
   UPDATE_CROP_SUCCESS,
+  CROP_DETAILS_REQUEST,
+  CROP_DETAILS_SUCCESS,
+  CROP_DETAILS_FAIL,
+  REMOVE_CROP_DETAILS,
 } from "../constants/productConstants";
 
 export const cropsReducer = (state = { crops: [] }, { type, payload }) => {
@@ -54,7 +58,39 @@ export const cropsReducer = (state = { crops: [] }, { type, payload }) => {
   }
 };
 
-// New Product Reducer
+export const cropDetailsReducer = (state = { crop: {} }, { type, payload }) => {
+  switch (type) {
+    case CROP_DETAILS_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case CROP_DETAILS_SUCCESS:
+      return {
+        loading: false,
+        crop: payload,
+      };
+    case CROP_DETAILS_FAIL:
+      return {
+        loading: false,
+        error: payload,
+      };
+    case REMOVE_CROP_DETAILS:
+      return {
+        ...state,
+        crop: {},
+      };
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null,
+      };
+    default:
+      return state;
+  }
+};
+
+// New Crop Reducer
 export const cropReducer = (state = {}, { type, payload }) => {
   switch (type) {
     case UPDATE_CROP_REQUEST:

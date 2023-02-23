@@ -40,6 +40,7 @@ import ShareButtons from "./Share/Shareweb";
 import MarketMitra from "./components/Admin/MarketMitra";
 import CropTable from "./components/Admin/CropTable";
 import Crops from "./components/Crops/Crops";
+import CropDetails from "./components/ProductDetails/CropDetails";
 
 function App() {
   const dispatch = useDispatch();
@@ -89,9 +90,11 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/product/:name" element={<ProductDetails />} />
+
         <Route path="/products" element={<Products />} />
-        <Route path="/crops" element={<Crops />} />
+        <Route path="/market_mitra" element={<Crops />} />
+
         <Route path="/products/:keyword" element={<Products />} />
 
         <Route path="/cart" element={<Cart />} />
