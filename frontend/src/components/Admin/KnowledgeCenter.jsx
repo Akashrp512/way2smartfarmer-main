@@ -4,19 +4,21 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSnackbar } from 'notistack';
 import { useNavigate } from 'react-router-dom';
-import { NEW_CROP_RESET, NEW_PRODUCT_RESET } from '../../constants/productConstants';
+
 import { clearErrors,  } from '../../actions/productAction';
-import { createCrop } from '../../actions/cropAction';
+
+import {createKnowledge} from '../../actions/knowledgeAction'
 
 import MetaData from '../Layouts/MetaData';
 import BackdropLoader from '../Layouts/BackdropLoader';
+import { NEW_KNOWLEDGE_RESET } from '../../constants/knowledgeConstants';
 
-const MarketMitra = () => {
+const KnowledgeCenter = () => {
   const dispatch = useDispatch();
   const { enqueueSnackbar } = useSnackbar();
   const navigate = useNavigate();
 
-  const { loading, success, error } = useSelector((state) => state.newCrop);
+  const { loading, success, error } = useSelector((state) => state.newKnowledge);
 
 
 
@@ -60,7 +62,7 @@ const MarketMitra = () => {
 
  
     if (images.length <= 0) {
-      enqueueSnackbar('Add Crop Images', { variant: 'warning' });
+      enqueueSnackbar('Add Product Images', { variant: 'warning' });
       return;
     }
 
@@ -75,7 +77,7 @@ const MarketMitra = () => {
     });
 
 
-     dispatch(createCrop(formData));
+     dispatch(createKnowledge(formData));
     
   };
 
@@ -85,9 +87,9 @@ const MarketMitra = () => {
       dispatch(clearErrors());
     }
     if (success) {
-      enqueueSnackbar('Crop Created', { variant: 'success' });
-      dispatch({ type: NEW_CROP_RESET });
-      navigate('/admin/crops');
+      enqueueSnackbar('Knowledge Created', { variant: 'success' });
+      dispatch({ type: NEW_KNOWLEDGE_RESET });
+      navigate('/knowledges');
     }
   }, [dispatch, error, success, navigate, enqueueSnackbar]);
 
@@ -104,7 +106,7 @@ const MarketMitra = () => {
       >
         
         <div className="flex flex-col gap-3 m-2 sm:w-1/2">
-        <h2 className="font-medium">Crop Details</h2>
+        <h2 className="font-medium">Knowledge Details</h2>
           <TextField
             label="Name"
             variant="outlined"
@@ -126,7 +128,7 @@ const MarketMitra = () => {
         </div>
 
         <div className="flex flex-col gap-2 m-2 sm:w-1/2">
-          <h2 className="font-medium">Crop Images</h2>
+          <h2 className="font-medium">Knowledge Images</h2>
           <div className="flex gap-2 overflow-x-auto h-32 border rounded">
             {imagesPreview.map((image, i) => (
               <img
@@ -164,4 +166,4 @@ const MarketMitra = () => {
   );
 };
 
-export default MarketMitra;
+export default KnowledgeCenter;

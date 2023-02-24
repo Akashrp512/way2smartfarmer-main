@@ -1,6 +1,6 @@
 import React from "react";
-import "./Coffe.css";
-const Coffee = () => {
+import '../Coffe.css'
+const Coconut = () => {
   return (
     <div>
       {/* <p>
@@ -20,7 +20,7 @@ const Coffee = () => {
               <th class="label">&nbsp;</th>
               <th>
                 <img src="https://via.placeholder.com/80x100" alt="" />
-                <h3>Coffee</h3>
+                <h3>Coconut</h3>
               </th>
             </tr>
           </thead>
@@ -155,4 +155,4 @@ const Coffee = () => {
   );
 };
 
-export default Coffee;
+export default Coconut;

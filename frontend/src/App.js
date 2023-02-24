@@ -40,7 +40,18 @@ import ShareButtons from "./Share/Shareweb";
 import MarketMitra from "./components/Admin/MarketMitra";
 import CropTable from "./components/Admin/CropTable";
 import Crops from "./components/Crops/Crops";
-import CropDetails from "./components/ProductDetails/CropDetails";
+import Coffee from "./components/Crops/Coffee";
+import Arecanut from "./components/Crops/Arecanut/Arecanut";
+import Coconut from "./components/Crops/Coconut/Coconut";
+import Cashew from "./components/Crops/Cashew/Cashew";
+import Maize from "./components/Crops/Maize/Maize";
+import Tur from "./components/Crops/Tur/Tur";
+import Cotton from "./components/Crops/Cotton/Cotton";
+import Onion from "./components/Crops/Onion/Onion";
+import Tomato from "./components/Crops/Tomato/Tomato";
+import Pepper from "./components/Crops/Pepper/Pepper";
+import KnowledgeCenter from "./components/Admin/KnowledgeCenter";
+import KnowledgeInfo from "./components/KnowledgeCenter/KnowledgeInfo";
 
 function App() {
   const dispatch = useDispatch();
@@ -93,8 +104,18 @@ function App() {
         <Route path="/product/:name" element={<ProductDetails />} />
 
         <Route path="/products" element={<Products />} />
-        <Route path="/market_mitra" element={<Crops />} />
-
+        <Route path="/crops" element={<Crops />} />
+        <Route path="/knowledges" element={<KnowledgeInfo />} />
+        <Route path="crop/coffee" element={<Coffee />} />
+        <Route path="crop/arecanut" element={<Arecanut />} />
+        <Route path="crop/pepper" element={<Pepper />} />
+        <Route path="crop/coconut" element={<Coconut />} />
+        <Route path="crop/cashew" element={<Cashew />} />
+        <Route path="crop/maize" element={<Maize />} />
+        <Route path="crop/tur" element={<Tur />} />
+        <Route path="crop/cotton" element={<Cotton />} />
+        <Route path="crop/onion" element={<Onion />} />
+        <Route path="crop/tomato" element={<Tomato />} />
         <Route path="/products/:keyword" element={<Products />} />
 
         <Route path="/cart" element={<Cart />} />
@@ -279,6 +300,16 @@ function App() {
             <ProtectedRoute isAdmin={true}>
               <Dashboard activeTab={3}>
                 <MarketMitra />
+              </Dashboard>
+            </ProtectedRoute>
+          }
+        ></Route>
+        <Route
+          path="/admin/knowledge_center"
+          element={
+            <ProtectedRoute isAdmin={true}>
+              <Dashboard activeTab={3}>
+                <KnowledgeCenter />
               </Dashboard>
             </ProtectedRoute>
           }

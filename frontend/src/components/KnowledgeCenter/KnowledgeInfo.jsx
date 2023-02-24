@@ -20,10 +20,14 @@ import MetaData from '../Layouts/MetaData';
 import { getRandomProducts } from '../../utils/functions';
 import { useLocation } from 'react-router-dom';
 import { getCrops } from '../../actions/cropAction';
-import Crop from './Crop';
+import Crop from '../Crops/Crop';
+import { getKnowledges } from '../../actions/knowledgeAction';
+import Knowledge from './Knowledge';
 
 
-const Crops = () => {
+
+
+const KnowledgeInfo = () => {
 
   
 
@@ -43,7 +47,7 @@ const Crops = () => {
     const [categoryToggle, setCategoryToggle] = useState(true);
     const [ratingsToggle, setRatingsToggle] = useState(true);
 
-    const { crops, loading, error, } = useSelector((state) => state.crops);
+    const { knowledges, loading, error, } = useSelector((state) => state.knowledges);
     const keyword = params.keyword;
 
 
@@ -62,13 +66,13 @@ const Crops = () => {
             enqueueSnackbar(error, { variant: "error" });
             dispatch(clearErrors());
         }
-        dispatch(getCrops(keyword, category, price, ratings, currentPage));
+        dispatch(getKnowledges(keyword, category, price, ratings, currentPage));
     }, [dispatch, keyword, category, price, ratings, currentPage, error, enqueueSnackbar]);
 
    
     return (
         <>
-            <MetaData title="AllCrops | Way2SmartFarmer" />
+            <MetaData title="AllKnowledges | Way2SmartFarmer" />
 
    
             <main className="w-full mt-14 sm:mt-0">
@@ -81,7 +85,7 @@ const Crops = () => {
                       {/* <!-- search column --> */}
                       <div className="flex-1">
 
-{!loading && crops?.length === 0 && (
+{!loading && knowledges?.length === 0 && (
     <div className="flex flex-col items-center   justify-center gap-3 bg-white shadow-sm rounded-sm p-6 sm:p-16">
         <img draggable="false" className="w-1/2 h-44 object-contain" src="https://www.way2smartfarmer.com/img/logo.jpeg" alt="Search Not Found" />
         <h1 className="text-2xl font-medium text-gray-900">Sorry, no results found!</h1>
@@ -93,15 +97,16 @@ const Crops = () => {
     <div className="flex flex-col gap-2 pb-4 justify-center items-center w-full overflow-hidden bg-white">
 
         <div className=" mt-20 sm:grid-cols-4 w-full place-content-start overflow-hidden pb-4 border-b">
-            <h1 className='font-bold  text-center text-5xl'>Market Mitra</h1>
-            {/* {crops?.map((crop) => (
+            <h1 className='font-bold  text-center text-5xl'>Knowledge Center</h1>
+            <div className='grid grid-cols-3'>
+            {knowledges?.map((knowledge) => (
                 <>
            
-                    <Crop {...crop} key={crop._id}  />
+                    <Knowledge {...knowledge} key={knowledge._id}  />
                   </>
                 ))
-            } */}
-             <Crop   />
+            }
+            </div>
          
         </div>
         {/* {filteredCropsCount > resultPerPage && (
@@ -124,4 +129,4 @@ const Crops = () => {
     );
 };
 
-export default Crops;
+export default KnowledgeInfo;

@@ -11,10 +11,7 @@ const catNav = [
     icon: mobiles,
   },
 
-  {
-    name: 'Knowledge Centre',
-    icon:mobiles,
-  },
+  
   {
     name: 'About Us',
     icon: mobiles,
@@ -61,7 +58,7 @@ const Categories = () => {
           </Link>
         ))}
         <Link 
-        to={`/market_mitra`}
+        to={`/crops`}
         className="flex flex-col gap-1 items-center p-2 group"
       
         >
@@ -75,6 +72,23 @@ const Categories = () => {
             </div>
             <span className="text-sm text-gray-800 font-medium group-hover:text-primary-blue">
              Market Mitra
+            </span>
+        </Link>
+        <Link 
+        to={`/knowledges`}
+        className="flex flex-col gap-1 items-center p-2 group"
+      
+        >
+          <div className="h-16 w-16">
+              <img
+                draggable="false"
+                className="h-full w-full object-contain"
+                src={mobiles}
+                alt='market_mitra'
+              />
+            </div>
+            <span className="text-sm text-gray-800 font-medium group-hover:text-primary-blue">
+             Knowledge Center
             </span>
         </Link>
       </div>

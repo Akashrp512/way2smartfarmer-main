@@ -11,6 +11,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import ForestIcon from '@mui/icons-material/Forest';
 import Avatar from '@mui/material/Avatar';
 import GrassIcon from '@mui/icons-material/Grass';
+import SchoolIcon from '@mui/icons-material/School';
 import { useDispatch, useSelector } from 'react-redux';
 import './Sidebar.css';
 import { useSnackbar } from 'notistack';
@@ -61,6 +62,11 @@ const navMenu = [
     icon: <GrassIcon />,
     label: 'Market Mitra',
     ref: '/admin/market_mitra',
+  },
+  {
+    icon: <SchoolIcon />,
+    label: 'Knowledge Center',
+    ref: '/admin/knowledge_center',
   },
   {
     icon: <LogoutIcon />,

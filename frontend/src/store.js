@@ -34,6 +34,10 @@ import {
   cropsReducer,
   newCropReducer,
 } from "./reducers/cropReducer";
+import {
+  knowledgesReducer,
+  newKnowledgeReducer,
+} from "./reducers/knowledgeReducer";
 
 const reducer = combineReducers({
   user: userReducer,
@@ -41,6 +45,7 @@ const reducer = combineReducers({
   forgotPassword: forgotPasswordReducer,
   products: productsReducer,
   crops: cropsReducer,
+  knowledges: knowledgesReducer,
   productDetails: productDetailsReducer,
   cropDetails: cropDetailsReducer,
   newReview: newReviewReducer,
@@ -53,6 +58,7 @@ const reducer = combineReducers({
   allOrders: allOrdersReducer,
   order: orderReducer,
   newProduct: newProductReducer,
+  newKnowledge: newKnowledgeReducer,
   newCrop: newCropReducer,
   product: productReducer,
   crop: cropReducer,

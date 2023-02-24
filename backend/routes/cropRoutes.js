@@ -1,5 +1,4 @@
 const express = require("express");
-const { get } = require("mongoose");
 
 const {
   createCrop,
@@ -7,7 +6,7 @@ const {
   getAllCrops,
   getCropDetails,
 } = require("../controllers/cropController");
-// const { getAdminProducts } = require("../controllers/productController");
+
 const { isAuthenticatedUser, authorizeRoles } = require("../middlewares/auth");
 
 const router = express.Router();

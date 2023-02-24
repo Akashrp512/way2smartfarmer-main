@@ -17,6 +17,7 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload());
 
+const knowledge = require("./routes/knowledgeRoutes");
 const crop = require("./routes/cropRoutes");
 const user = require("./routes/userRoute");
 const product = require("./routes/productRoute");
@@ -28,6 +29,7 @@ app.use("/api/v1", product);
 app.use("/api/v1", order);
 app.use("/api/v1", payment);
 app.use("/api/v1", crop);
+app.use("/api/v1", knowledge);
 
 // deployment
 __dirname = path.resolve();
