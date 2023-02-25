@@ -15,6 +15,8 @@ const Cart = () => {
     navigate('/login?redirect=shipping');
   };
 
+
+
   return (
     <>
       <MetaData title="Shopping Cart | way2smartFarmer" />
@@ -61,6 +63,7 @@ const Cart = () => {
                 saveForLaterItems.map((item) => <SaveForLaterItem {...item} />)}
             </div>
             {/* <!-- saved for later container --> */}
+      
           </div>
           {/* <!-- cart column --> */}
 

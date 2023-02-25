@@ -35,6 +35,9 @@ const CartItem = ({ product, name, seller, price, cuttedPrice, image, stock, qua
         removeCartItem(id);
         enqueueSnackbar("Saved For Later", { variant: "success" });
     }
+    const handleClick = () => {
+        window.location.replace(`http://wa.me/919449004956?text=${name}+${image}+${product}+${seller}+${price}`);
+      };
 
     return (
         <div className="flex flex-col gap-3 py-5 pl-2 sm:pl-6 border-b overflow-hidden" key={product}>
@@ -57,9 +60,9 @@ const CartItem = ({ product, name, seller, price, cuttedPrice, image, stock, qua
 
                         <div className="flex flex-col sm:gap-2">
                             <p className="text-sm">Delivery by {getDeliveryDate()} | <span className="text-primary-green">Free</span> <span className="line-through">₹{quantity * 40}</span></p>
-                            <span className="text-xs text-gray-500">7 Days Replacement Policy</span>
+                            {/* <span className="text-xs text-gray-500">7 Days Replacement Policy</span> */}
                         </div>
-
+                        <button onClick={handleClick }      className="bg-primary-green px-6 py-2 text-white font-medium rounded-sm shadow hover:shadow-lg uppercase">Whatsapp</button>
                     </div>
                     {/* <!-- product title --> */}
 

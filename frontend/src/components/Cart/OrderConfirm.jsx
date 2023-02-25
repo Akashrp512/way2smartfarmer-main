@@ -4,11 +4,18 @@ import PriceSidebar from './PriceSidebar';
 import Stepper from './Stepper';
 import { useNavigate } from 'react-router-dom';
 import MetaData from '../Layouts/MetaData';
+import { Link } from 'react-router-dom';
 
 const OrderConfirm = () => {
   const navigate = useNavigate();
   const { cartItems } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
+
+
+
+  const handleClick = () => {
+    window.location.replace(`http://wa.me/919449004956?text=${user.email}+${user.name}`);
+  };
 
   return (
     <>
@@ -32,12 +39,15 @@ const OrderConfirm = () => {
                 </p>
                 <button
                   onClick={() => {
-                    navigate('/process/payment');
+                    navigate('/shipping');
                   }}
                   className="bg-primary-orange px-6 py-2 text-white font-medium rounded-sm shadow hover:shadow-lg uppercase"
                 >
                   continue
                 </button>
+   
+                <button onClick={handleClick }      className="bg-primary-green px-6 py-2 text-white font-medium rounded-sm shadow hover:shadow-lg uppercase">Whatsapp</button>
+                
               </div>
             </Stepper>
           </div>

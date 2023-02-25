@@ -53,6 +53,8 @@ import Pepper from "./components/Crops/Pepper/Pepper";
 import KnowledgeCenter from "./components/Admin/KnowledgeCenter";
 import KnowledgeInfo from "./components/KnowledgeCenter/KnowledgeInfo";
 import ReadBot from "./components/User/ReadBot";
+import Translate from "./utils/Translate";
+import About from "./components/About/About";
 
 function App() {
   const dispatch = useDispatch();
@@ -103,7 +105,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/product/:id" element={<ProductDetails />} />
-
+        <Route path="/translator" element={<Translate />} />
         <Route path="/products" element={<Products />} />
         <Route path="/crops" element={<Crops />} />
         <Route path="/knowledges" element={<KnowledgeInfo />} />
@@ -118,7 +120,7 @@ function App() {
         <Route path="crop/onion" element={<Onion />} />
         <Route path="crop/tomato" element={<Tomato />} />
         <Route path="/products/:keyword" element={<Products />} />
-
+        <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart />} />
 
         {/* order process */}
