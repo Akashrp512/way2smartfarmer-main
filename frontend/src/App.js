@@ -52,6 +52,7 @@ import Tomato from "./components/Crops/Tomato/Tomato";
 import Pepper from "./components/Crops/Pepper/Pepper";
 import KnowledgeCenter from "./components/Admin/KnowledgeCenter";
 import KnowledgeInfo from "./components/KnowledgeCenter/KnowledgeInfo";
+import ReadBot from "./components/User/ReadBot";
 
 function App() {
   const dispatch = useDispatch();
@@ -101,7 +102,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/product/:name" element={<ProductDetails />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
 
         <Route path="/products" element={<Products />} />
         <Route path="/crops" element={<Crops />} />
@@ -194,6 +195,15 @@ function App() {
           element={
             <ProtectedRoute>
               <Account />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/callback"
+          element={
+            <ProtectedRoute>
+              <ReadBot />
             </ProtectedRoute>
           }
         ></Route>

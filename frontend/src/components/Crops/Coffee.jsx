@@ -1,18 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
 import "./Coffe.css";
 const Coffee = () => {
+  const [back,setBack] = useState(false);
+  if(back){
+    return <Navigate to={`/crops`} replace />
+}
   return (
     <div>
-      {/* <p>
-        {" "}
-        A responsive product comparison table, with only HTML and CSS <br />
-        <a
-          href="https://www.gsarigiannidis.gr/responsive-product-comparison-table-html-css-no-js/"
-          target="_blank"
-        >
-          Read the details
-        </a>
-      </p> */}
+          
+  
+  <button className="mt-16 bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"  onClick={()=>setBack(true)}>Back</button>
       <div class="container">
         <table class="products-4">
           <thead>
@@ -151,6 +149,7 @@ const Coffee = () => {
           </tbody>
         </table>
       </div>
+      
     </div>
   );
 };

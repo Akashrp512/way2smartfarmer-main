@@ -10,6 +10,7 @@ import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import CloseIcon from '@mui/icons-material/Close';
 import ForestIcon from '@mui/icons-material/Forest';
 import Avatar from '@mui/material/Avatar';
+import Phone from '@mui/icons-material/Phone';
 import GrassIcon from '@mui/icons-material/Grass';
 import SchoolIcon from '@mui/icons-material/School';
 import { useDispatch, useSelector } from 'react-redux';
@@ -67,6 +68,11 @@ const navMenu = [
     icon: <SchoolIcon />,
     label: 'Knowledge Center',
     ref: '/admin/knowledge_center',
+  },
+  {
+    icon: <Phone />,
+    label: 'Call Back', 
+    ref: '/callback',
   },
   {
     icon: <LogoutIcon />,
