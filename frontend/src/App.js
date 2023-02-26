@@ -36,7 +36,6 @@ import UpdateUser from "./components/Admin/UpdateUser";
 import ReviewsTable from "./components/Admin/ReviewsTable";
 import Wishlist from "./components/Wishlist/Wishlist";
 import NotFound from "./components/NotFound";
-import ShareButtons from "./Share/Shareweb";
 import MarketMitra from "./components/Admin/MarketMitra";
 import CropTable from "./components/Admin/CropTable";
 import Crops from "./components/Crops/Crops";
@@ -52,9 +51,10 @@ import Tomato from "./components/Crops/Tomato/Tomato";
 import Pepper from "./components/Crops/Pepper/Pepper";
 import KnowledgeCenter from "./components/Admin/KnowledgeCenter";
 import KnowledgeInfo from "./components/KnowledgeCenter/KnowledgeInfo";
-import ReadBot from "./components/User/ReadBot";
 import Translate from "./utils/Translate";
 import About from "./components/About/About";
+import AddCustomer from "./components/Home/Bot/BotWrite";
+import ReadBo from './components/User/BotRead/BotDetails';
 
 function App() {
   const dispatch = useDispatch();
@@ -205,7 +205,7 @@ function App() {
           path="/callback"
           element={
             <ProtectedRoute>
-              <ReadBot />
+              <ReadBo />
             </ProtectedRoute>
           }
         ></Route>
@@ -373,6 +373,7 @@ function App() {
 
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
+      <AddCustomer />
       <Footer />
     </>
   );

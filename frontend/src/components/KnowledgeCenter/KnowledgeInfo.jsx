@@ -86,7 +86,7 @@ const KnowledgeInfo = () => {
                       <div className="flex-1">
 
 {!loading && knowledges?.length === 0 && (
-    <div className="flex flex-col items-center   justify-center gap-3 bg-white shadow-sm rounded-sm p-6 sm:p-16">
+    <div className="flex flex-col items-center   justify-center gap-3 shadow-sm rounded-sm p-6 sm:p-16">
         <img draggable="false" className="w-1/2 h-44 object-contain" src="https://www.way2smartfarmer.com/img/logo.jpeg" alt="Search Not Found" />
         <h1 className="text-2xl font-medium text-gray-900">Sorry, no results found!</h1>
         <p className="text-xl text-center text-primary-grey">Please check the spelling or try searching for something else</p>
@@ -94,7 +94,7 @@ const KnowledgeInfo = () => {
 )}
 
 {loading ? <Loader /> : (
-    <div className="flex flex-col gap-2 pb-4 justify-center items-center w-full overflow-hidden bg-white">
+    <div className="flex flex-col gap-2 pb-4 justify-center items-center w-full overflow-hidden">
 
         <div className=" mt-20 sm:grid-cols-4 w-full place-content-start overflow-hidden pb-4 border-b">
             <h1 className='font-bold  text-center text-5xl'>Knowledge Center</h1>

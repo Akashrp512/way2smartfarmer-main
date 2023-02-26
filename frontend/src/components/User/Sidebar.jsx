@@ -28,7 +28,7 @@ const Sidebar = ({ activeTab }) => {
         <div className="hidden sm:flex flex-col gap-4 w-1/4 px-1">
 
             {/* <!-- profile card --> */}
-            <div className="flex items-center gap-4 p-3 bg-white rounded-sm shadow">
+            <div className="flex items-center gap-4 p-3 rounded-sm shadow">
                 {/* <!-- user icon --> */}
                 <div className="w-12 h-12 rounded-full">
                     <img draggable="false" className="h-full w-full object-cover rounded-full" src={user.avatar.url} alt="Avatar" />
@@ -42,7 +42,7 @@ const Sidebar = ({ activeTab }) => {
             {/* <!-- profile card --> */}
 
             {/* <!-- nav tiles --> */}
-            <div className="flex flex-col bg-white rounded-sm shadow">
+            <div className="flex flex-col rounded-sm shadow">
 
                 {/* <!-- my orders tab --> */}
                 <div className="flex items-center gap-5 px-4 py-4 border-b">
@@ -115,7 +115,7 @@ const Sidebar = ({ activeTab }) => {
             {/* <!-- nav tiles --> */}
 
             {/* <!-- frequenty visited tab --> */}
-            <div className="flex flex-col items-start gap-2 p-4 bg-white rounded-sm shadow">
+            <div className="flex flex-col items-start gap-2 p-4 rounded-sm shadow">
                 <span className="text-xs font-medium">Frequently Visited:</span>
                 <div className="flex gap-2.5 text-xs text-gray-500">
                     <Link to="/password/update">Change Password</Link>

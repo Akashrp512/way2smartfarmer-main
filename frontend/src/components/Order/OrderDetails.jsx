@@ -35,7 +35,7 @@ const OrderDetails = () => {
           <>
             {order && order.user && order.shippingInfo && (
               <div className="flex flex-col gap-4 max-w-6xl mx-auto">
-                <div className="flex bg-white shadow rounded-sm min-w-full">
+                <div className="flex shadow rounded-sm min-w-full">
                   <div className="sm:w-1/2 border-r">
                     <div className="flex flex-col gap-3 my-8 mx-10">
                       <h3 className="font-medium text-lg">Delivery Address</h3>
@@ -59,7 +59,7 @@ const OrderDetails = () => {
 
                     return (
                       <div
-                        className="flex flex-col sm:flex-row min-w-full shadow rounded-sm bg-white px-2 py-5"
+                        className="flex flex-col sm:flex-row min-w-full shadow rounded-sm px-2 py-5"
                         key={_id}
                       >
                         <div className="flex flex-col sm:flex-row sm:w-1/2 gap-2">

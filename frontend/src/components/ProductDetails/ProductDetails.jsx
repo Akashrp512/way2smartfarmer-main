@@ -2,6 +2,7 @@ import { useSnackbar } from 'notistack';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import ReactImageMagnify from 'react-image-magnify';
 import Slider from 'react-slick';
 import {
   clearErrors,
@@ -153,18 +154,31 @@ const ProductDetails = () => {
                 {/* <!-- imgbox --> */}
                 <div className="flex flex-col gap-3 m-3">
                   <div className="w-full h-full pb-6 border relative">
-                    <Slider {...settings}>
-                      {product.images &&
-                        product.images.map((item, i) => (
-                          <img
-                            draggable="false"
-                            className="w-full h-96 object-contain"
-                            src={item.url}
-                            alt={product.name}
-                            key={i}
-                          />
-                        ))}
-                    </Slider>
+                    <div id="zoom">
+                      <Slider {...settings}>
+                        {product.images &&
+                          product.images.map((item, i) => (
+                            <div key={i} id="zoom"  >
+                              <ReactImageMagnify
+                                {...{
+                                  smallImage: {
+                                    alt: product.name,
+                                    src: item.url,
+                                    width: 400,
+                                    height: 300,
+                                  },
+                                  largeImage: {
+                                    src: item.url,
+                                    width: 1200,
+                                    height: 900,
+                                  },
+                                  isHintEnabled: true,
+                                }}
+                              />
+                            </div>
+                          ))}
+                      </Slider>
+                    </div>
                     <div className="absolute top-4 right-4 shadow-lg bg-white w-9 h-9 border flex items-center justify-center rounded-full">
                       <span
                         onClick={addToWishlistHandler}
@@ -211,7 +225,7 @@ const ProductDetails = () => {
 
               {/* <!-- product desc wrapper --> */}
               <div className="flex-1 py-2 px-3">
-              <ShareButtons />
+                <ShareButtons />
                 {/* <!-- whole product description --> */}
                 <div className="flex flex-col gap-2 mb-4">
                   <h2 className="text-xl">{product.name}</h2>

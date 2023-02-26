@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import NavigationBar from '../Layouts/Categories';
+import { NavigationBar } from '../Layouts/Categories'; // modify the import statement
 import Banner from './Banner/Banner';
 import DealSlider from './DealSlider/DealSlider';
 import ProductSlider from './ProductSlider/ProductSlider';

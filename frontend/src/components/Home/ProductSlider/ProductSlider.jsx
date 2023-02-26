@@ -10,7 +10,7 @@ const ProductSlider = ({ title, tagline }) => {
     const { loading, products } = useSelector((state) => state.products);
 
     return (
-        <section className="bg-white w-full shadow overflow-hidden">
+        <section className="w-full shadow overflow-hidden">
             {/* <!-- header --> */}
             <div className="flex px-6 py-4 justify-between items-center view-all" style={{ borderRadius: '20px' }}>
                 <div className="title flex flex-col gap-0.5">

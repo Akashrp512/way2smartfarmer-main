@@ -73,7 +73,7 @@ const Products = () => {
                     <div className="hidden sm:flex flex-col w-1/5 px-1">
 
                         {/* <!-- nav tiles --> */}
-                        <div className="flex flex-col bg-white rounded-sm shadow">
+                        <div className="flex flex-col rounded-sm shadow">
 
                             {/* <!-- filters header --> */}
                             <div className="flex items-center justify-between gap-5 px-4 py-2 border-b">
@@ -178,7 +178,7 @@ const Products = () => {
                     <div className="flex-1">
 
                         {!loading && products?.length === 0 && (
-                            <div className="flex flex-col items-center justify-center gap-3 bg-white shadow-sm rounded-sm p-6 sm:p-16">
+                            <div className="flex flex-col items-center justify-center gap-3 shadow-sm rounded-sm p-6 sm:p-16">
                                 <img draggable="false" className="w-1/2 h-44 object-contain" src="https://www.way2smartfarmer.com/img/logo.jpeg" alt="Search Not Found" />
                                 <h1 className="text-2xl font-medium text-gray-900">Sorry, no results found!</h1>
                                 <p className="text-xl text-center text-primary-grey">Please check the spelling or try searching for something else</p>
@@ -186,7 +186,7 @@ const Products = () => {
                         )}
 
                         {loading ? <Loader /> : (
-                            <div className="flex flex-col gap-2 pb-4 justify-center items-center w-full overflow-hidden bg-white">
+                            <div className="flex flex-col gap-2 pb-4 justify-center items-center w-full overflow-hidden">
 
                                 <div className="grid grid-cols-1 sm:grid-cols-4 w-full place-content-start overflow-hidden pb-4 border-b">
                                     {products?.map((product) => (

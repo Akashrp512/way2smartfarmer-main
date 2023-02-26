@@ -43,7 +43,7 @@ const ForgotPassword = () => {
       {loading && <BackdropLoader />}
       <main className="w-full mt-12 sm:pt-20 sm:mt-0">
         {/* <!-- row --> */}
-        <div className="flex sm:w-4/6 sm:mt-4 m-auto mb-7 bg-white shadow-lg">
+        <div className="flex sm:w-4/6 sm:mt-4 m-auto mb-7 shadow-lg">
           <FormSidebar
             title="Forgot Your Password?"
             tag="Enter the email address associated with your account."

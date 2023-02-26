@@ -1,99 +1,70 @@
-import mobiles from '../../assets/images/Categories/phone.png';
-import { Link } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import home from '../images/Home.png';
+import Agritech from '../images/Agritech.png';
+import Agriclinic from '../images/Agri_cliniic.png';
+import Market from '../images/Market_mitra.png';
+import Knowledge from '../images/Knowledge_center.png';
+import About from '../images/About_us.png';
+import Contact from '../images/Contact_us.png';
+import { Five, Four, One, Seven, Six, Three, Two } from './Dropdown';
 
-const catNav = [
-  {
-    name: 'AgriTech',
-    icon: mobiles,
-  },
-  {
-    name: 'AgriClinic',
-    icon: mobiles,
-  },
-
-  
-  {
-    name: 'About Us',
-    icon: mobiles,
-  },
-  {
-    name: 'ContactUs',
-    icon: mobiles,
-  },
-  {
-    name: 'way2agri',
-    icon: mobiles,
-  },
-  {
-    name: 'way2smartfarmer',
-    icon: mobiles,
-  },
-  {
-    name: 'AgriBusiness',
-    icon: mobiles,
-  },
-];
-
-const Categories = () => {
+export function NavigationBar() {
   return (
-    <section className="hidden sm:block bg-white mt-10 mb-4 min-w-full px-12 py-1 shadow overflow-hidden">
-      <div className="flex items-center justify-between mt-4">
-        {catNav.map((item, i) => (
-          <Link
-            to={`/products?category=${item.name}`}
-            className="flex flex-col gap-1 items-center p-2 group"
-            key={i}
-          >
-            <div className="h-16 w-16">
-              <img
-                draggable="false"
-                className="h-full w-full object-contain"
-                src={item.icon}
-                alt={item.name}
-              />
-            </div>
-            <span className="text-sm text-gray-800 font-medium group-hover:text-primary-blue">
-              {item.name}
-            </span>
-          </Link>
-        ))}
-        <Link 
-        to={`/crops`}
-        className="flex flex-col gap-1 items-center p-2 group"
-      
-        >
-          <div className="h-16 w-16">
-              <img
-                draggable="false"
-                className="h-full w-full object-contain"
-                src={mobiles}
-                alt='market_mitra'
-              />
-            </div>
-            <span className="text-sm text-gray-800 font-medium group-hover:text-primary-blue">
-             Market Mitra
-            </span>
-        </Link>
-        <Link 
-        to={`/knowledges`}
-        className="flex flex-col gap-1 items-center p-2 group"
-      
-        >
-          <div className="h-16 w-16">
-              <img
-                draggable="false"
-                className="h-full w-full object-contain"
-                src={mobiles}
-                alt='market_mitra'
-              />
-            </div>
-            <span className="text-sm text-gray-800 font-medium group-hover:text-primary-blue">
-             Knowledge Center
-            </span>
-        </Link>
-      </div>
-    </section>
-  );
-};
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
+        <One>
+          <Navbar.Brand href="#home">
+            <img src={home} alt="Home" />
+            <p>Home</p>
+          </Navbar.Brand>
+        </One>
 
-export default Categories;
+        <Two>
+          <Navbar.Brand href="#home">
+            <img src={Agritech} alt="Home" />
+            <p>Agritech</p>
+          </Navbar.Brand>
+        </Two>
+
+        <Three>
+          <Navbar.Brand href="#home">
+            <img src={Agriclinic} alt="Home" />
+            <p>Agriclinic</p>
+          </Navbar.Brand>
+        </Three>
+
+        <Four>
+          <Navbar.Brand href="#home">
+            <img src={Market} alt="Home" />
+            <p>Market</p>
+          </Navbar.Brand>
+        </Four>
+
+        <Five>
+          <Navbar.Brand href="#home">
+            <img src={Knowledge} alt="Home" />
+            <p>Knowledge center</p>
+          </Navbar.Brand>
+        </Five>
+
+        <Six>
+          <Navbar.Brand href="#home">
+            <img src={About} alt="Home" />
+            <p>About us</p>
+          </Navbar.Brand>
+        </Six>
+
+        <Seven>
+          <Navbar.Brand href="#home">
+            <img src={Contact} alt="Home" />
+            <p>Contact us</p>
+          </Navbar.Brand>
+        </Seven>
+      </Container>
+    </Navbar>
+
+  );
+}
+
+

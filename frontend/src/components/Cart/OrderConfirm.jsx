@@ -13,9 +13,7 @@ const OrderConfirm = () => {
 
 
 
-  const handleClick = () => {
-    window.location.replace(`http://wa.me/919449004956?text=${user.email}+${user.name}`);
-  };
+
 
   return (
     <>
@@ -46,7 +44,7 @@ const OrderConfirm = () => {
                   continue
                 </button>
    
-                <button onClick={handleClick }      className="bg-primary-green px-6 py-2 text-white font-medium rounded-sm shadow hover:shadow-lg uppercase">Whatsapp</button>
+                <button       className="bg-primary-green px-6 py-2 text-white font-medium rounded-sm shadow hover:shadow-lg uppercase">Order</button>
                 
               </div>
             </Stepper>

@@ -5,7 +5,7 @@
 /* /////////////////////////////////////////////////////////////////////////// */
 .dark-mode {
   background-color: black;
-  /* color: #ffffff; */
+  color: #ffffff;
 }
 
 .share-container {
@@ -94,10 +94,12 @@
   display: flex;
   margin-top: 60px;
   justify-content: center;
-  gap: 100px;
 }
 .navbar-brand img {
   width: 50px;
+}
+.navbar {
+  flex-wrap: nowrap;
 }
 .subdrop {
   position: absolute;
@@ -160,7 +162,6 @@ body {
   margin-bottom: 4px;
 }
 .banner-p {
-  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   height: 20rem;
 }
@@ -179,6 +180,141 @@ body {
   border-radius: 10px;
 }
 
+/* ///////////////////////////// */
+.bot {
+  width: 50px;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 5;
+}
+.callback_from {
+  background: green;
+  display: inline-grid;
+  padding: 10px;
+  gap: 10px;
+  color: white;
+  right: 55px;
+  position: fixed;
+  border-radius: 10px;
+  bottom: 8%;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.callback_from label {
+  display: grid;
+  gap: 10px;
+}
+.callback_from button {
+  background: goldenrod;
+  border-radius: 10px;
+  color: black;
+}
+.callback_from input {
+  color: black;
+}
+
+.displaycall {
+  margin: auto;
+  margin-top: 10%;
+}
+table,
+th,
+td {
+  border: 1px solid;
+}
+
+table {
+  width: 80%;
+}
+.downloadbtn {
+  background-color: #215d0e;
+  color: #ffffff;
+  border-radius: 5px;
+  position: absolute;
+  padding: 2px 10px;
+  left: 50%;
+  margin-top: 10px;
+}
+
+/* /////////////////////////////////////////////// */
+.productscard {
+  background: goldenrod;
+  padding: 2px 10px;
+  width: 100%;
+  text-align: center;
+}
+.productcard {
+  background: lightgreen;
+  padding: 2px 10px;
+  border-radius: 10px;
+  box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px,
+    rgb(60 64 67 / 15%) 0px 2px 6px 2px;
+  border: thick double #00026b;
+}
+.productcard h2 {
+  background: goldenrod;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.productcardin {
+  border: thick double #f1f1f1;
+  border-radius: 10px;
+  padding: 2px;
+}
+/* /////////////////////////// */
+.filterbtn {
+  background-color: #ffc100;
+  padding: 0px 10px;
+  border-radius: 5px;
+  position: fixed;
+  top: 8%;
+  right: 0px;
+  z-index: 2;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  display: none;
+}
+.hidden {
+  display: flex;
+}
+.filterbtn:hover + .showo {
+  display: block;
+}
+.showo {
+  display: none;
+}
+.showContainer {
+  width: 80%;
+  position: fixed;
+  z-index: 2;
+  left: -4px;
+  top: 8%;
+}
+/* ////////////////////////////////////////// */
+#zoom {
+  width: 1200px;
+}
+/* ////////////////////////////////////////// */
+.dispinner button img {
+  width: 40px;
+}
+.dispinner p a img {
+  width: 40px;
+}
+.product {
+  background-color: #215d0e;
+  margin: 10px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.product h2 {
+  background-color: #ffc100;
+  width: -webkit-fill-available;
+  color: #215d0e;
+}
+
 /* /////////////////////////////////////////////// */
 @media screen and (max-width: 450px) {
   .searchbar {
@@ -187,5 +323,14 @@ body {
   }
   .searchbar input {
     font-size: 11px;
+  }
+  .navbar {
+    overflow-x: scroll;
+  }
+  .hidden {
+    display: none;
+  }
+  .filterbtn {
+    display: block;
   }
 }

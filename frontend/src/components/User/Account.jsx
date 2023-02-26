@@ -37,7 +37,7 @@ const Account = () => {
               <Sidebar activeTab={'profile'} />
 
               {/* <!-- details column --> */}
-              <div className="flex-1 overflow-hidden shadow bg-white">
+              <div className="flex-1 overflow-hidden shadow">
                 {/* <!-- edit info container --> */}
                 <div className="flex flex-col gap-12 m-4 sm:mx-8 sm:my-6">
                   {/* <!-- personal info --> */}

@@ -120,7 +120,7 @@ const MyOrders = () => {
           {/* <!-- sidebar column  --> */}
           <div className="hidden sm:flex flex-col w-1/5 px-1">
             {/* <!-- nav tiles --> */}
-            <div className="flex flex-col bg-white rounded-sm shadow">
+            <div className="flex flex-col rounded-sm shadow">
               {/* <!-- filters header --> */}
               <div className="flex items-center justify-between gap-5 px-4 py-2 border-b">
                 <p className="text-lg font-medium">Filters</p>
@@ -205,7 +205,7 @@ const MyOrders = () => {
                 {/* <!-- searchbar --> */}
                 <form
                   onSubmit={searchOrders}
-                  className="flex items-center justify-between mx-1 sm:mx-0 sm:w-10/12 bg-white border rounded hover:shadow"
+                  className="flex items-center justify-between mx-1 sm:mx-0 sm:w-10/12 border rounded hover:shadow"
                 >
                   <input
                     value={search}
@@ -226,7 +226,7 @@ const MyOrders = () => {
                 {/* <!-- searchbar --> */}
 
                 {orders && filteredOrders.length === 0 && (
-                  <div className="flex items-center flex-col gap-2 p-8 bg-white">
+                  <div className="flex items-center flex-col gap-2 p-8">
                     <img
                       draggable="false"
                       src="https://www.way2smartfarmer.com/img/logo.jpeg"

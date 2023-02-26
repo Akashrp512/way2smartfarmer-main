@@ -2,7 +2,6 @@
     box-sizing: border-box; 
   }
   body { /* Just some padding for the demo */
-    padding: 0 50px; 
     font-family: 'Roboto', Arial;
     font-weight: 300;
   }
@@ -17,11 +16,11 @@
   h3 {
     margin: 0;
   }
-  .container {
+  /* .container {
     background: #fff;
     max-height: calc(100vh - 80px);
     overflow: auto;
-  }
+  } */
   table {
   }
   th {

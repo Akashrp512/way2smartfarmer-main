@@ -42,7 +42,7 @@ export const settings = {
 
 const DealSlider = ({ title }) => {
     return (
-        <section className="bg-white w-full shadow overflow-hidden">
+        <section className="w-full shadow overflow-hidden">
             {/* <!-- header --> */}
             <div className="flex px-6 py-3 justify-between items-center">
                 <h1 className="text-xl font-medium">{title}</h1>
