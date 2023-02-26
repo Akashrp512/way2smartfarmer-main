@@ -1,14 +1,16 @@
 import { useSnackbar } from 'notistack';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addItemsToCart, removeItemsFromCart } from '../../actions/cartAction';
 import { getDeliveryDate, getDiscount } from '../../utils/functions';
 import { saveForLater } from '../../actions/saveForLaterAction';
 import { Link } from 'react-router-dom';
 
-const CartItem = ({ product, name, seller, price, cuttedPrice, image, stock, quantity, inCart }) => {
+const CartSample = ({ product, name, seller, price, cuttedPrice, image, stock, quantity, inCart }) => {
 
     const dispatch = useDispatch();
     const { enqueueSnackbar } = useSnackbar();
+    const { orderInfo } = useSelector((state) => state.CartSample);
+
 
     const increaseQuantity = (id, quantity, stock) => {
         const newQty = quantity + 1;
@@ -36,7 +38,9 @@ const CartItem = ({ product, name, seller, price, cuttedPrice, image, stock, qua
         enqueueSnackbar("Saved For Later", { variant: "success" });
     }
     const handleClick = () => {
-        window.location.replace(`http://wa.me/919449004956?text=${name}+${image}+${product}+${seller}+${price}`);
+        // window.location.replace(`http://wa.me/919449004956?text=${name}+${image}+${product}+${seller}+${price}`);
+        window.location.replace(`sms:+18664504185?&body=Hi%2520there%252C%2520I%2527d%2520like%2520to%2520place%2520an%2520order%2520for...`);
+        // <a href="sms:+18664504185?&body=Hi%2520there%252C%2520I%2527d%2520like%2520to%2520place%2520an%2520order%2520for...">Click here to text us!</a>
       };
 
     return (
@@ -59,7 +63,6 @@ const CartItem = ({ product, name, seller, price, cuttedPrice, image, stock, qua
                         </div>
 
                         <div className="flex flex-col sm:gap-2">
-                        <a href="sms:+919740595079?&body=Hi%2520there%252C%2520I%2527d%2520like%2520to%2520place%2520an%2520order%2520for...">Click here to text us!</a>
                             <p className="text-sm">Delivery by {getDeliveryDate()} | <span className="text-primary-green">Free</span> <span className="line-through">₹{quantity * 40}</span></p>
                             {/* <span className="text-xs text-gray-500">7 Days Replacement Policy</span> */}
                         </div>
@@ -101,4 +104,4 @@ const CartItem = ({ product, name, seller, price, cuttedPrice, image, stock, qua
     );
 };
 
-export default CartItem;
+export default CartSample;

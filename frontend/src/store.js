@@ -17,7 +17,7 @@ import {
   productReviewsReducer,
   reviewReducer,
 } from "./reducers/productReducer";
-import { cartReducer } from "./reducers/cartReducer";
+import { cartReducer, orderSampleReducer } from "./reducers/cartReducer";
 import { saveForLaterReducer } from "./reducers/saveForLaterReducer";
 import {
   allOrdersReducer,
@@ -50,6 +50,7 @@ const reducer = combineReducers({
   cropDetails: cropDetailsReducer,
   newReview: newReviewReducer,
   cart: cartReducer,
+  orderSample: orderSampleReducer,
   saveForLater: saveForLaterReducer,
   newOrder: newOrderReducer,
   myOrders: myOrdersReducer,

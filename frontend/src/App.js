@@ -54,7 +54,8 @@ import KnowledgeInfo from "./components/KnowledgeCenter/KnowledgeInfo";
 import Translate from "./utils/Translate";
 import About from "./components/About/About";
 import AddCustomer from "./components/Home/Bot/BotWrite";
-import ReadBo from './components/User/BotRead/BotDetails';
+import ReadBo from "./components/User/BotRead/BotDetails";
+import CartSample from "./components/Cart/CartSample";
 
 function App() {
   const dispatch = useDispatch();
@@ -122,7 +123,7 @@ function App() {
         <Route path="/products/:keyword" element={<Products />} />
         <Route path="/about" element={<About />} />
         <Route path="/cart" element={<Cart />} />
-
+        <Route path="/sample" element={<CartSample />} />
         {/* order process */}
         <Route
           path="/shipping"

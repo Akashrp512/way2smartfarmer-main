@@ -5,11 +5,17 @@ import Stepper from './Stepper';
 import { useNavigate } from 'react-router-dom';
 import MetaData from '../Layouts/MetaData';
 import { Link } from 'react-router-dom';
+import CartSample from './CartSample';
 
 const OrderConfirm = () => {
   const navigate = useNavigate();
   const { cartItems } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user);
+
+
+  const orderHandler = () => {
+    navigate('/order/success');
+  };
 
 
 
@@ -28,8 +34,11 @@ const OrderConfirm = () => {
               <div className="w-full bg-white">
                 {cartItems?.map((item, i) => (
                   <CartItem {...item} inCart={false} key={i} />
+         
                 ))}
+               
               </div>
+             
               <div className="flex justify-between items-center mt-4 bg-white px-6 py-3 rounded-b-sm">
                 <p className="text-sm">
                   Order confirmation email will be sent to{' '}
@@ -37,14 +46,16 @@ const OrderConfirm = () => {
                 </p>
                 <button
                   onClick={() => {
-                    navigate('/shipping');
+                    navigate('/orders/success');
                   }}
                   className="bg-primary-orange px-6 py-2 text-white font-medium rounded-sm shadow hover:shadow-lg uppercase"
                 >
                   continue
                 </button>
    
-                <button       className="bg-primary-green px-6 py-2 text-white font-medium rounded-sm shadow hover:shadow-lg uppercase">Order</button>
+                <button onClick={() => {
+                    navigate('/orders/success');
+                  }}      className="bg-primary-green px-6 py-2 text-white font-medium rounded-sm shadow hover:shadow-lg uppercase">Order</button>
                 
               </div>
             </Stepper>
