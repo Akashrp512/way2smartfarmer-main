@@ -91,17 +91,17 @@ const Crops = () => {
 
 {loading ? <Loader /> : (
     <div className="flex flex-col gap-2 pb-4 justify-center items-center w-full overflow-hidden bg-white">
-
-        <div className=" mt-20 sm:grid-cols-4 w-full place-content-start overflow-hidden pb-4 border-b">
-            <h1 className='font-bold  text-center text-5xl'>Market Mitra</h1>
-            {/* {crops?.map((crop) => (
+ <h1 className='font-bold mt-20 text-center text-5xl'>Market Mitra</h1>
+        <div className="grid grid-cols-1 mt-20 sm:grid-cols-4 w-full place-content-start overflow-hidden pb-4 border-b">
+           
+            {crops?.map((crop) => (
                 <>
            
                     <Crop {...crop} key={crop._id}  />
                   </>
                 ))
-            } */}
-             <Crop   />
+            }
+        
          
         </div>
         {/* {filteredCropsCount > resultPerPage && (

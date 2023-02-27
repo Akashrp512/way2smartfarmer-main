@@ -23,6 +23,8 @@ const user = require("./routes/userRoute");
 const product = require("./routes/productRoute");
 const order = require("./routes/orderRoute");
 const payment = require("./routes/paymentRoute");
+const compare = require("./routes/compareRoutes");
+const insight = require("./routes/insightRoutes");
 
 app.use("/api/v1", user);
 app.use("/api/v1", product);
@@ -30,7 +32,8 @@ app.use("/api/v1", order);
 app.use("/api/v1", payment);
 app.use("/api/v1", crop);
 app.use("/api/v1", knowledge);
-
+app.use("/api/v1", compare);
+app.use("/api/v1", insight);
 // deployment
 __dirname = path.resolve();
 if (process.env.NODE_ENV === "production") {

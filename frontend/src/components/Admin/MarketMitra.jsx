@@ -6,7 +6,7 @@ import { useSnackbar } from 'notistack';
 import { useNavigate } from 'react-router-dom';
 import { NEW_CROP_RESET, NEW_PRODUCT_RESET } from '../../constants/productConstants';
 import { clearErrors,  } from '../../actions/productAction';
-import { createCrop } from '../../actions/cropAction';
+import { createComparision, createCrop, createInsights } from '../../actions/cropAction';
 
 import MetaData from '../Layouts/MetaData';
 import BackdropLoader from '../Layouts/BackdropLoader';
@@ -17,11 +17,14 @@ const MarketMitra = () => {
   const navigate = useNavigate();
 
   const { loading, success, error } = useSelector((state) => state.newCrop);
+ 
 
 
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
+ 
+
 
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
@@ -33,7 +36,7 @@ const MarketMitra = () => {
 
 
 
-  const handleProductImageChange = (e) => {
+  const handleCropImageChange = (e) => {
     const files = Array.from(e.target.files);
 
     setImages([]);
@@ -52,7 +55,7 @@ const MarketMitra = () => {
     });
   };
 
-  const newProductSubmitHandler = (e) => {
+  const newCropSubmitHandler = (e) => {
     e.preventDefault();
 
     // required field checks
@@ -78,6 +81,8 @@ const MarketMitra = () => {
      dispatch(createCrop(formData));
     
   };
+  
+  
 
   useEffect(() => {
     if (error) {
@@ -96,8 +101,9 @@ const MarketMitra = () => {
       <MetaData title="Admin: New Crop | way2smartfarmer" />
 
       {loading && <BackdropLoader />}
+      <h1 className="font-medium">Crop Details</h1>
       <form
-        onSubmit={newProductSubmitHandler}
+        onSubmit={newCropSubmitHandler}
         encType="multipart/form-data"
         className="flex flex-col sm:flex-row bg-white rounded-lg shadow p-4"
         id="mainform"
@@ -144,7 +150,7 @@ const MarketMitra = () => {
               name="images"
               accept="image/*"
               multiple
-              onChange={handleProductImageChange}
+              onChange={handleCropImageChange}
               className="hidden"
             />
             Choose Files
@@ -160,6 +166,7 @@ const MarketMitra = () => {
           </div>
         </div>
       </form>
+     
     </>
   );
 };

@@ -28,9 +28,9 @@ const Knowledge = ({_id,name,images,description}) => {
     
     <div className="flex flex-col items-start gap-2 px-4 py-6 relative hover:shadow-lg rounded-sm bg-green-300 m-1 ">
     {/* <!-- image & product title --> */}
-    <Fragment
+    <div
        
-        className="flex flex-col items-center text-center group  "
+        className="flex flex-col items-center text-center group "
       >
         <div className="w-44 h-48">
           <img
@@ -44,7 +44,7 @@ const Knowledge = ({_id,name,images,description}) => {
           {name.length > 85 ? `${name.substring(0, 85)}...` : name}
         </h2>
         <p>{description}</p>
-      </Fragment>
+      </div>
    {/* <!-- image & product title --> */}
     {/* <!-- product description --> */}
     <div className="flex flex-col gap-2 items-start">

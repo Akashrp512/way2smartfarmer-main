@@ -56,6 +56,9 @@ import About from "./components/About/About";
 import AddCustomer from "./components/Home/Bot/BotWrite";
 import ReadBo from "./components/User/BotRead/BotDetails";
 import CartSample from "./components/Cart/CartSample";
+import Market from "./components/Admin/Compare";
+import Mitra from "./components/Admin/Insights";
+import CropDetails from "./components/Crops/CropDetails";
 
 function App() {
   const dispatch = useDispatch();
@@ -110,7 +113,8 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/crops" element={<Crops />} />
         <Route path="/knowledges" element={<KnowledgeInfo />} />
-        <Route path="crop/coffee" element={<Coffee />} />
+        {/* <Route path="crop/:id" element={<Coffee />} /> */}
+        <Route path="insight/:id" element={<CropDetails />} />
         <Route path="crop/arecanut" element={<Arecanut />} />
         <Route path="crop/pepper" element={<Pepper />} />
         <Route path="crop/coconut" element={<Coconut />} />
@@ -313,6 +317,26 @@ function App() {
             <ProtectedRoute isAdmin={true}>
               <Dashboard activeTab={3}>
                 <MarketMitra />
+              </Dashboard>
+            </ProtectedRoute>
+          }
+        ></Route>
+        <Route
+          path="/admin/market"
+          element={
+            <ProtectedRoute isAdmin={true}>
+              <Dashboard activeTab={3}>
+                <Market />
+              </Dashboard>
+            </ProtectedRoute>
+          }
+        ></Route>
+        <Route
+          path="/admin/mitra"
+          element={
+            <ProtectedRoute isAdmin={true}>
+              <Dashboard activeTab={3}>
+                <Mitra />
               </Dashboard>
             </ProtectedRoute>
           }
