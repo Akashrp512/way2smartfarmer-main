@@ -17,7 +17,9 @@ export function One() {
   return (
     <>
       <Dropdown>
-        <img src={home} alt="Home" />
+        <a href="/">
+          <img src={home} alt="Home" />
+        </a>
         <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
           home
         </Dropdown.Toggle>
@@ -42,7 +44,9 @@ export function Two() {
   return (
     <>
       <Dropdown>
-        <img src={Agritech} alt="Home" />
+        <a href="/">
+          <img src={Agritech} alt="Home" />
+        </a>
         <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
           Agritech
         </Dropdown.Toggle>
@@ -62,7 +66,9 @@ export function Three() {
   return (
     <>
       <Dropdown>
-        <img src={Agriclinic} alt="Home" />
+        <a href="">
+          <img src={Agriclinic} alt="Home" />
+        </a>
         <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
           Agri clicic
         </Dropdown.Toggle>
@@ -81,7 +87,9 @@ export function Four() {
   return (
     <>
       <Dropdown>
-        <img src={Market} alt="Home" />
+        <a href="">
+          <img src={Market} alt="Home" />
+        </a>
         <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
           Market Mitra
         </Dropdown.Toggle>
@@ -109,7 +117,9 @@ export function Five() {
   return (
     <>
       <Dropdown>
-        <img src={Knowledge} alt="Home" />
+        <a href="/knowledges">
+          <img src={Knowledge} alt="Home" />
+        </a>
         <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
           Knowledge center
         </Dropdown.Toggle>
@@ -127,7 +137,9 @@ export function Six() {
   return (
     <>
       <Dropdown>
-        <img src={About} alt="Home" />
+        <a href="/About">
+          <img src={About} alt="Home" />
+        </a>
         <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
           About us
         </Dropdown.Toggle>
@@ -147,7 +159,9 @@ export function Seven() {
   return (
     <>
       <Dropdown>
-        <img src={Contact} alt="Home" />
+        <a href="/Contact">
+          <img src={Contact} alt="contact " />
+        </a>
         <Dropdown.Toggle id="dropdown-button-dark-example1" variant="secondary">
           Contact us
         </Dropdown.Toggle>

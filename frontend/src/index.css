@@ -188,11 +188,19 @@ body {
   bottom: 10px;
   z-index: 5;
 }
+.contact {
+  width: 50px;
+  position: fixed;
+  right: 80px;
+  bottom: 10px;
+  z-index: 5;
+}
 .callback_from {
   background: green;
   display: inline-grid;
   padding: 10px;
   gap: 10px;
+  z-index: 1;
   color: white;
   right: 55px;
   position: fixed;
@@ -223,10 +231,11 @@ th,
 td {
   border: 1px solid;
 }
-
-table {
-  width: 80%;
+thead tr {
+  font-weight: 500;
+  font-size: 20px;
 }
+
 .downloadbtn {
   background-color: #215d0e;
   color: #ffffff;
@@ -307,15 +316,110 @@ table {
   margin: 10px;
   border-radius: 10px;
   color: white;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 .product h2 {
   background-color: #ffc100;
   width: -webkit-fill-available;
   color: #215d0e;
 }
-
 /* /////////////////////////////////////////////// */
+.cWrap {
+  margin-top: 5%;
+}
+.Iwrap {
+  margin: 0px 10%;
+}
+.cWrap h2 {
+  text-align: center;
+  font-size: 25px;
+  color: #215d0e;
+  font-weight: 500;
+}
+.mainContact {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  padding: 10px;
+  margin: 10px;
+}
+.ContactFrom {
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.ContactFrom label {
+  display: grid;
+  font-weight: 500;
+}
+.ContactFrom button {
+  border-radius: 10px;
+  padding: 2px;
+  box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px, rgb(0 0 0 / 30%) 0px 7px 13px -3px,
+    rgb(0 0 0 / 20%) 0px -3px 0px inset;
+  background-color: #ccbe00;
+}
+.ContactFrom button:hover {
+  background-color: #26a100;
+}
+.contactinfo {
+  display: grid;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 10px;
+  box-shadow: rgb(204 219 232) 3px 3px 6px 0px inset,
+    rgb(204 219 232) -3px 3px 6px 0px inset,
+    rgb(204 219 232) 3px -3px 6px 0px inset,
+    rgb(255 255 255 / 50%) -3px -3px 6px 1px inset;
+  width: 50%;
+  gap: 10px;
+}
+.contactinfo div {
+  text-align: center;
+  background: aquamarine;
+  box-shadow: rgb(0 0 0 / 25%) 0px 0.0625em 0.0625em,
+    rgb(0 0 0 / 25%) 0px 0.125em 0.5em,
+    rgb(255 255 255 / 10%) 0px 0px 0px 1px inset;
+  border-radius: 5px;
+}
+.contactinfo div h3 {
+  text-align: start;
+  padding: 5px 10px;
+  font-weight: 500;
+  color: #215d0e;
+}
+/* /////////////Knowledge///////////////////////// */
+.Knmain {
+  display: flex;
+  gap: 10px;
+  margin: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cards {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  border-radius: 5px;
+  width: 370px;
+}
+.cards h2 {
+  font-size: 20px;
+  background: #ffc100;
+  padding: 5px;
+  font-weight: 500;
+  color: #215d0e;
+}
+.cards p {
+  padding: 10px;
+  text-align: justify;
+}
+
 @media screen and (max-width: 450px) {
   .searchbar {
     width: 85%;

@@ -26,21 +26,20 @@ const Knowledge = ({_id,name,images,description}) => {
  
   return (
     
-    <div className="flex flex-col items-start gap-2 px-4 py-6 relative hover:shadow-lg rounded-sm bg-green-300 m-1 ">
+    <div className="cards">
     {/* <!-- image & product title --> */}
     <Fragment
        
         className="flex flex-col items-center text-center group  "
       >
-        <div className="w-44 h-48">
+        <div>
           <img
             draggable="false"
-            className="w-full h-full object-contain"
             src={images && images[0].url}
             alt=""
           />
         </div>
-        <h2 className="text-sm mt-4 group-hover:text-primary-blue text-center">
+        <h2 className="text-sm group-hover:text-primary-blue text-center">
           {name.length > 85 ? `${name.substring(0, 85)}...` : name}
         </h2>
         <p>{description}</p>

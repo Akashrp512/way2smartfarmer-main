@@ -1,61 +1,62 @@
-import WebFont from "webfontloader";
-import Footer from "./components/Layouts/Footer/Footer";
-import Header from "./components/Layouts/Header/Header";
-import Login from "./components/User/Login";
-import Register from "./components/User/Register";
-import { Routes, Route, useLocation } from "react-router-dom";
-import { loadUser } from "./actions/userAction";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import UpdateProfile from "./components/User/UpdateProfile";
-import UpdatePassword from "./components/User/UpdatePassword";
-import ForgotPassword from "./components/User/ForgotPassword";
-import ResetPassword from "./components/User/ResetPassword";
-import Account from "./components/User/Account";
-import ProtectedRoute from "./Routes/ProtectedRoute";
-import Home from "./components/Home/Home";
-import ProductDetails from "./components/ProductDetails/ProductDetails";
-import Products from "./components/Products/Products";
-import Cart from "./components/Cart/Cart";
-import Shipping from "./components/Cart/Shipping";
-import OrderConfirm from "./components/Cart/OrderConfirm";
-import Payment from "./components/Cart/Payment";
-import OrderStatus from "./components/Cart/OrderStatus";
-import OrderSuccess from "./components/Cart/OrderSuccess";
-import MyOrders from "./components/Order/MyOrders";
-import OrderDetails from "./components/Order/OrderDetails";
-import Dashboard from "./components/Admin/Dashboard";
-import MainData from "./components/Admin/MainData";
-import OrderTable from "./components/Admin/OrderTable";
-import UpdateOrder from "./components/Admin/UpdateOrder";
-import ProductTable from "./components/Admin/ProductTable";
-import NewProduct from "./components/Admin/NewProduct";
-import UpdateProduct from "./components/Admin/UpdateProduct";
-import UserTable from "./components/Admin/UserTable";
-import UpdateUser from "./components/Admin/UpdateUser";
-import ReviewsTable from "./components/Admin/ReviewsTable";
-import Wishlist from "./components/Wishlist/Wishlist";
-import NotFound from "./components/NotFound";
-import MarketMitra from "./components/Admin/MarketMitra";
-import CropTable from "./components/Admin/CropTable";
-import Crops from "./components/Crops/Crops";
-import Coffee from "./components/Crops/Coffee";
-import Arecanut from "./components/Crops/Arecanut/Arecanut";
-import Coconut from "./components/Crops/Coconut/Coconut";
-import Cashew from "./components/Crops/Cashew/Cashew";
-import Maize from "./components/Crops/Maize/Maize";
-import Tur from "./components/Crops/Tur/Tur";
-import Cotton from "./components/Crops/Cotton/Cotton";
-import Onion from "./components/Crops/Onion/Onion";
-import Tomato from "./components/Crops/Tomato/Tomato";
-import Pepper from "./components/Crops/Pepper/Pepper";
-import KnowledgeCenter from "./components/Admin/KnowledgeCenter";
-import KnowledgeInfo from "./components/KnowledgeCenter/KnowledgeInfo";
-import Translate from "./utils/Translate";
-import About from "./components/About/About";
-import AddCustomer from "./components/Home/Bot/BotWrite";
-import ReadBo from "./components/User/BotRead/BotDetails";
-import CartSample from "./components/Cart/CartSample";
+import WebFont from 'webfontloader';
+import Footer from './components/Layouts/Footer/Footer';
+import Header from './components/Layouts/Header/Header';
+import Login from './components/User/Login';
+import Register from './components/User/Register';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { loadUser } from './actions/userAction';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import UpdateProfile from './components/User/UpdateProfile';
+import UpdatePassword from './components/User/UpdatePassword';
+import ForgotPassword from './components/User/ForgotPassword';
+import ResetPassword from './components/User/ResetPassword';
+import Account from './components/User/Account';
+import ProtectedRoute from './Routes/ProtectedRoute';
+import Home from './components/Home/Home';
+import ProductDetails from './components/ProductDetails/ProductDetails';
+import Products from './components/Products/Products';
+import Cart from './components/Cart/Cart';
+import Shipping from './components/Cart/Shipping';
+import OrderConfirm from './components/Cart/OrderConfirm';
+import Payment from './components/Cart/Payment';
+import OrderStatus from './components/Cart/OrderStatus';
+import OrderSuccess from './components/Cart/OrderSuccess';
+import MyOrders from './components/Order/MyOrders';
+import OrderDetails from './components/Order/OrderDetails';
+import Dashboard from './components/Admin/Dashboard';
+import MainData from './components/Admin/MainData';
+import OrderTable from './components/Admin/OrderTable';
+import UpdateOrder from './components/Admin/UpdateOrder';
+import ProductTable from './components/Admin/ProductTable';
+import NewProduct from './components/Admin/NewProduct';
+import UpdateProduct from './components/Admin/UpdateProduct';
+import UserTable from './components/Admin/UserTable';
+import UpdateUser from './components/Admin/UpdateUser';
+import ReviewsTable from './components/Admin/ReviewsTable';
+import Wishlist from './components/Wishlist/Wishlist';
+import NotFound from './components/NotFound';
+import MarketMitra from './components/Admin/MarketMitra';
+import CropTable from './components/Admin/CropTable';
+import Crops from './components/Crops/Crops';
+import Coffee from './components/Crops/Coffee';
+import Arecanut from './components/Crops/Arecanut/Arecanut';
+import Coconut from './components/Crops/Coconut/Coconut';
+import Cashew from './components/Crops/Cashew/Cashew';
+import Maize from './components/Crops/Maize/Maize';
+import Tur from './components/Crops/Tur/Tur';
+import Cotton from './components/Crops/Cotton/Cotton';
+import Onion from './components/Crops/Onion/Onion';
+import Tomato from './components/Crops/Tomato/Tomato';
+import Pepper from './components/Crops/Pepper/Pepper';
+import KnowledgeCenter from './components/Admin/KnowledgeCenter';
+import KnowledgeInfo from './components/KnowledgeCenter/KnowledgeInfo';
+import Translate from './utils/Translate';
+import About from './components/About/About';
+import AddCustomer from './components/Home/Bot/BotWrite';
+import ReadBo from './components/User/BotRead/BotDetails';
+import CartSample from './components/Cart/CartSample';
+import AddCustome from './components/Home/ContactWrite/Write';
 
 function App() {
   const dispatch = useDispatch();
@@ -70,7 +71,7 @@ function App() {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ["Roboto:300,400,500,600,700"],
+        families: ['Roboto:300,400,500,600,700'],
       },
     });
   });
@@ -85,7 +86,7 @@ function App() {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   }, [pathname]);
 
@@ -238,6 +239,15 @@ function App() {
           element={
             <ProtectedRoute>
               <Wishlist />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/Contact"
+          element={
+            <ProtectedRoute>
+              <AddCustome />
             </ProtectedRoute>
           }
         ></Route>

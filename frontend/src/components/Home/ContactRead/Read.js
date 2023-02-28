@@ -19,7 +19,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-function ReadBo() {
+function ContactRead() {
   const [data, setData] = useState({});
   const [selectedItems, setSelectedItems] = useState([]);
 
@@ -79,7 +79,7 @@ function ReadBo() {
     <div>
       <table className="displaycall" id="myTable">
         <thead>
-          <tr>Contact</tr>
+          <tr>Contact us</tr>
           <tr>
             <th>Date & Time</th>
             <th>Mark</th>
@@ -89,9 +89,9 @@ function ReadBo() {
             <th>Messages</th>
           </tr>
         </thead>
-        <tbody>
-          {data &&
-            Object.entries(data).map(([key, value]) => (
+        {data &&
+          Object.entries(data).map(([key, value]) => (
+            <tbody>
               <tr key={key} className="dispinner">
                 <td>{value.datetime}</td>
                 <td>
@@ -101,6 +101,7 @@ function ReadBo() {
                 <td>{value.Phonenumber}</td>
                 <td>{value.dateofbirth}</td>
                 <td>{value.CMsg}</td>
+
                 <div style={{ display: 'flex', gap: '10px', padding: '5px' }}>
                   <button onClick={() => handleDelete(key)}>
                     <DeleteIcon />
@@ -114,17 +115,17 @@ function ReadBo() {
                     <a href={`sms:${value.Phonenumber}`}>
                       <SmsIcon />
                     </a>
+                    <a
+                      aria-label="Chat on WhatsApp"
+                      href={`https://wa.me/${value.Phonenumber}`}
+                    >
+                      <WhatsAppIcon />
+                    </a>
                   </p>
-                  <a
-                    aria-label="Chat on WhatsApp"
-                    href={`https://wa.me/${value.Phonenumber}`}
-                  >
-                    <WhatsAppIcon />
-                  </a>
                 </div>
               </tr>
-            ))}
-        </tbody>
+            </tbody>
+          ))}
       </table>
       <button onClick={downloadData} className="downloadbtn">
         Download
@@ -132,4 +133,4 @@ function ReadBo() {
     </div>
   );
 }
-export default ReadBo;
+export default ContactRead;
