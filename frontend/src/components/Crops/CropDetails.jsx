@@ -1,32 +1,27 @@
 import { useSnackbar } from 'notistack';
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom';
-import { getCompareDetails, getComparisions } from '../../actions/cropAction';
-import { clearErrors } from '../../actions/productAction';
+import React, { useEffect, useState } from 'react'
+
+
 
 const CropDetails = () => {
-    const dispatch = useDispatch();
-    const { enqueueSnackbar } = useSnackbar();
-    const params= useParams();
-
-    const {compare,loading,error} = useSelector((state)=>state.compareDetails);
-
-    const compareId = params.id;
-
-    useEffect(() => {
-        if (error) {
-          enqueueSnackbar(error, { variant: 'error' });
-          dispatch(clearErrors());
-        }
-     
-        dispatch(getCompareDetails(compareId));
-        // eslint-disable-next-line
-      }, [dispatch, error,  enqueueSnackbar]);
-    
+  const [data,setData] = useState([])
+  useEffect(()=>{
+    fetch("http://localhost:4000/api/v1/compare/63fc69580c7b17a6babd1c5e")
+      .then(response => response.json())
+      .then(json => setData(json.compare))
+      .catch(error => console.error(error));
+  },[])
+   
   return (
-    <div className='mt-20'>CropDetails 
-    <h1>{compare.monthly_price_comp}</h1>
+    <div className='mt-20'>
+     {data ? (
+        <div>
+          <h2>Monthly Price Comparison:</h2>
+          <p>{data.monthly_price_comp}</p>
+        </div>
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   )
 }

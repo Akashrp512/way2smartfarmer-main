@@ -113,7 +113,8 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/crops" element={<Crops />} />
         <Route path="/knowledges" element={<KnowledgeInfo />} />
-        {/* <Route path="crop/:id" element={<Coffee />} /> */}
+        <Route path="crop/:id" element={<Coffee />} />
+        {/* <Route path="crop/:id" element={<CropDetails />} /> */}
         <Route path="insight/:id" element={<CropDetails />} />
         <Route path="crop/arecanut" element={<Arecanut />} />
         <Route path="crop/pepper" element={<Pepper />} />

@@ -97,7 +97,7 @@ const Crops = () => {
             {crops?.map((crop) => (
                 <>
            
-                    <Crop {...crop} key={crop._id}  />
+                    <Crop {...crop} key={crop.id}  />
                   </>
                 ))
             }

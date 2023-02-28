@@ -18,7 +18,7 @@ const Crop = ({_id,name,images,description}) => {
           <img
             draggable="false"
             className="w-full h-full object-contain p-2"
-            src={images && images[0].url}
+            src={images && images[0].url}  
             alt={name}
           />
         
