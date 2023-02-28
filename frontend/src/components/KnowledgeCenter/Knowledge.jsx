@@ -28,9 +28,9 @@ const Knowledge = ({_id,name,images,description}) => {
     
     <div className="cards">
     {/* <!-- image & product title --> */}
-    <Fragment
+    <div
        
-        className="flex flex-col items-center text-center group  "
+        className="flex flex-col items-center text-center group "
       >
         <div>
           <img
@@ -43,7 +43,7 @@ const Knowledge = ({_id,name,images,description}) => {
           {name.length > 85 ? `${name.substring(0, 85)}...` : name}
         </h2>
         <p>{description}</p>
-      </Fragment>
+      </div>
    {/* <!-- image & product title --> */}
     {/* <!-- product description --> */}
     <div className="flex flex-col gap-2 items-start">

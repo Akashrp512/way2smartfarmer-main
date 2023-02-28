@@ -1,7 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import "./Coffe.css";
 const Coffee = () => {
+  const [data,setData] = useState([])
+  useEffect(()=>{
+    fetch("http://localhost:4000/api/v1/compare/63fd9c7f9b443190add65f27")
+      .then(response => response.json())
+      .then(json => setData(json.compare))
+      .catch(error => console.error(error));
+  },[])
   const [back,setBack] = useState(false);
   if(back){
     return <Navigate to={`/crops`} replace />
@@ -10,12 +17,12 @@ const Coffee = () => {
     <div>
           
   
-  <button className="mt-16 bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"  onClick={()=>setBack(true)}>Back</button>
-      <div class="container">
-        <table class="products-4">
+  <button className="mt-16 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"  onClick={()=>setBack(true)}>Back</button>
+      <div className="ml-20">
+        <table className="products-4">
           <thead>
             <tr>
-              <th class="label">&nbsp;</th>
+              <th className="label">&nbsp;</th>
               <th>
                 <img src="https://via.placeholder.com/80x100" alt="" />
                 <h3>Coffee</h3>
@@ -24,7 +31,7 @@ const Coffee = () => {
           </thead>
           <tbody>
             <tr>
-              <td class="heading" colspan="5">
+              <td className="heading" colspan="5">
                 <span>Price Outlook</span>
               </td>
             </tr>
@@ -32,11 +39,7 @@ const Coffee = () => {
               <td class="label">Monthly Price Outlook </td>
               <td>
                 <div class="spec" spec-title="Label">
-                  When the user clicks on the widget or focuses it then presses
-                  the space bar, it "twists" open, revealing its contents. The
-                  common use of a triangle which rotates or twists around to
-                  represent opening or closing the widget is why these are
-                  sometimes.
+                {data.monthly_price_comp}
                 </div>
               </td>
             </tr>
@@ -44,11 +47,7 @@ const Coffee = () => {
               <td class="label"> Quarterly Price Outlook</td>
               <td>
                 <div class="spec" spec-title="Label">
-                  When the user clicks on the widget or focuses it then presses
-                  the space bar, it "twists" open, revealing its contents. The
-                  common use of a triangle which rotates or twists around to
-                  represent opening or closing the widget is why these are
-                  sometimes.
+                {data.quarterly_price_comp}
                 </div>
               </td>
             </tr>
@@ -56,11 +55,7 @@ const Coffee = () => {
               <td class="label"> Seasonal Price Outlook</td>
               <td>
                 <div class="spec" spec-title="Label">
-                  When the user clicks on the widget or focuses it then presses
-                  the space bar, it "twists" open, revealing its contents. The
-                  common use of a triangle which rotates or twists around to
-                  represent opening or closing the widget is why these are
-                  sometimes.
+                {data.seasonal_price_comp}
                 </div>
               </td>
             </tr>
@@ -73,11 +68,7 @@ const Coffee = () => {
               <td class="label">Monthly Summery & Review</td>
               <td>
                 <div class="spec" spec-title="Label">
-                  When the user clicks on the widget or focuses it then presses
-                  the space bar, it "twists" open, revealing its contents. The
-                  common use of a triangle which rotates or twists around to
-                  represent opening or closing the widget is why these are
-                  sometimes.
+                {data.monthly_summary_comp}
                 </div>
               </td>
             </tr>
@@ -85,11 +76,7 @@ const Coffee = () => {
               <td class="label">Quarterly Summery & Review</td>
               <td>
                 <div class="spec" spec-title="Label">
-                  When the user clicks on the widget or focuses it then presses
-                  the space bar, it "twists" open, revealing its contents. The
-                  common use of a triangle which rotates or twists around to
-                  represent opening or closing the widget is why these are
-                  sometimes.
+                {data.quarterly_summary_comp}
                 </div>
               </td>
             </tr>
@@ -97,11 +84,7 @@ const Coffee = () => {
               <td class="label">Seasonal Summery & Review</td>
               <td>
                 <div class="spec" spec-title="Label">
-                  When the user clicks on the widget or focuses it then presses
-                  the space bar, it "twists" open, revealing its contents. The
-                  common use of a triangle which rotates or twists around to
-                  represent opening or closing the widget is why these are
-                  sometimes.
+                {data.seasonal_summary_comp}
                 </div>
               </td>
             </tr>
@@ -111,38 +94,50 @@ const Coffee = () => {
               </td>
             </tr>
             <tr>
-              <td class="label">Monthly Bull & Bear Factor </td>
+              <td class="label">Monthly Bull Factor </td>
               <td>
                 <div class="spec" spec-title="Label">
-                  When the user clicks on the widget or focuses it then presses
-                  the space bar, it "twists" open, revealing its contents. The
-                  common use of a triangle which rotates or twists around to
-                  represent opening or closing the widget is why these are
-                  sometimes.
+                {data.monthly_bull_comp}
                 </div>
               </td>
             </tr>
             <tr>
-              <td class="label">Quarterly Bull & Bear Factor </td>
+              <td class="label">Quarterly Bull Factor </td>
               <td>
                 <div class="spec" spec-title="Label">
-                  When the user clicks on the widget or focuses it then presses
-                  the space bar, it "twists" open, revealing its contents. The
-                  common use of a triangle which rotates or twists around to
-                  represent opening or closing the widget is why these are
-                  sometimes.
+                {data.quarterly_bull_comp}
                 </div>
               </td>
             </tr>
             <tr>
-              <td class="label">Seasonal Bull & Bear Factor </td>
+              <td class="label">Seasonal Bull Factor </td>
               <td>
                 <div class="spec" spec-title="Label">
-                  When the user clicks on the widget or focuses it then presses
-                  the space bar, it "twists" open, revealing its contents. The
-                  common use of a triangle which rotates or twists around to
-                  represent opening or closing the widget is why these are
-                  sometimes.
+                {data.seasonal_bull_comp}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="label">Monthly Bear Factor </td>
+              <td>
+                <div class="spec" spec-title="Label">
+                {data.monthly_bear_comp}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="label">Quarterly Bear Factor </td>
+              <td>
+                <div class="spec" spec-title="Label">
+                {data.quarterly_bear_comp}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="label">Seasonal Bear Factor </td>
+              <td>
+                <div class="spec" spec-title="Label">
+                {data.seasonal_bear_comp}
                 </div>
               </td>
             </tr>

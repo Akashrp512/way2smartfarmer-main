@@ -29,10 +29,15 @@ import {
 } from "./reducers/orderReducer";
 import { wishlistReducer } from "./reducers/wishlistReducer";
 import {
+  compareDetailsReducer,
+  comparesReducer,
   cropDetailsReducer,
   cropReducer,
   cropsReducer,
+  insightDetailsReducer,
+  newCompareReducer,
   newCropReducer,
+  newInsightReducer,
 } from "./reducers/cropReducer";
 import {
   knowledgesReducer,
@@ -45,9 +50,12 @@ const reducer = combineReducers({
   forgotPassword: forgotPasswordReducer,
   products: productsReducer,
   crops: cropsReducer,
+  compares: comparesReducer,
   knowledges: knowledgesReducer,
   productDetails: productDetailsReducer,
   cropDetails: cropDetailsReducer,
+  compareDetails: compareDetailsReducer,
+  insightDetails: insightDetailsReducer,
   newReview: newReviewReducer,
   cart: cartReducer,
   orderSample: orderSampleReducer,
@@ -61,6 +69,8 @@ const reducer = combineReducers({
   newProduct: newProductReducer,
   newKnowledge: newKnowledgeReducer,
   newCrop: newCropReducer,
+  newCompare: newCompareReducer,
+  newInsight: newInsightReducer,
   product: productReducer,
   crop: cropReducer,
   users: allUsersReducer,

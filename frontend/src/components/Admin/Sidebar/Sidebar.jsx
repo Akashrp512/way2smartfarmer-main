@@ -13,6 +13,8 @@ import Avatar from '@mui/material/Avatar';
 import Phone from '@mui/icons-material/Phone';
 import GrassIcon from '@mui/icons-material/Grass';
 import SchoolIcon from '@mui/icons-material/School';
+import InsightsIcon from '@mui/icons-material/Insights';
+import CompareArrowsIcon from '@mui/icons-material/CompareArrows';
 import { useDispatch, useSelector } from 'react-redux';
 import './Sidebar.css';
 import { useSnackbar } from 'notistack';
@@ -63,6 +65,16 @@ const navMenu = [
     icon: <GrassIcon />,
     label: 'Market Mitra',
     ref: '/admin/market_mitra',
+  },
+  {
+    icon: <CompareArrowsIcon />,
+    label: 'Comparision',
+    ref: '/admin/market',
+  },
+  {
+    icon: <InsightsIcon />,
+    label: 'Insights',
+    ref: '/admin/mitra',
   },
   {
     icon: <SchoolIcon />,
