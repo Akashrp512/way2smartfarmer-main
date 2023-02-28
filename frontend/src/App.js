@@ -104,6 +104,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        {/* prashanth */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/product/:id" element={<ProductDetails />} />
