@@ -174,7 +174,7 @@ body {
   border-radius: 10px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    color: #fff;
+  color: #fff;
 }
 .view-all {
   border-radius: 10px;
@@ -427,6 +427,20 @@ thead tr {
   text-align: justify;
   color: #215d0e;
   font-size: 15px;
+}
+.caedhover {
+  background: #ffc100;
+}
+.cardhover h3 {
+  font-size: 14px;
+}
+.cardhover:hover {
+  color: #fff;
+}
+.cardtitle {
+  background-color: #ffc100;
+  color: #215d0e;
+  padding: 2px 30px;
 }
 
 @media screen and (max-width: 450px) {

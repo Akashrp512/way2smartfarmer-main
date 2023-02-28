@@ -45,6 +45,7 @@ const DealSlider = ({ title }) => {
         <section className="w-full shadow overflow-hidden">
             {/* <!-- header --> */}
             <div className="flex px-6 py-3 justify-between items-center">
+
                 <h1 className="text-xl font-medium">{title}</h1>
                 <Link to="/products" className="bg-primary-blue text-xs font-medium text-white px-5 py-2.5 rounded-sm shadow-lg">VIEW ALL</Link>
             </div>
